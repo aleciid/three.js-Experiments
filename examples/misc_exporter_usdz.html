@@ -71,6 +71,14 @@
 				const loader = new GLTFLoader().setPath( 'models/gltf/RobotExpressive/' );
 				loader.load( 'RobotExpressive.glb', async function ( gltf ) {
 					
+					let animations = gltf.animations;
+        if ( animations && animations.length ) {
+            mixer = new THREE.AnimationMixer( object );
+            for ( var i = 0; i < animations.length; i ++ ) {
+                var animation = animations[ i ];
+                mixer.clipAction( animation ).play();
+            }
+        }
 					
 					scene.add( gltf.scene );
 
