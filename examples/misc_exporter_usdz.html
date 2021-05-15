@@ -142,6 +142,15 @@
 				render();
 
 			}
+			
+			//
+			function animate() {
+   				 requestAnimationFrame( animate );
+   				 if (mixer) mixer.update(clock.getDelta());
+   				 controls.update();
+   			 render();
+}
+			
 
 			//
 
