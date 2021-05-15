@@ -71,6 +71,11 @@
 				const loader = new GLTFLoader().setPath( 'models/gltf/' );
 				loader.load( 'HXN_Danny_Rozin_tribute_alsebu_007_3x3.glb', async function ( gltf ) {
 
+					mixer = new THREE.AnimationMixer( gltf.scene );
+					var action = mixer.clipAction( gltf.animations[ 0 ] );
+					action.play();
+					
+					
 					scene.add( gltf.scene );
 
 					const shadowMesh = createSpotShadowMesh();
