@@ -68,15 +68,15 @@
 				scene.background = new THREE.Color( 0xf0f0f0 );
 				scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
-				const loader = new GLTFLoader().setPath( 'models/gltf/BoomBox/glTF/' );
-				loader.load( 'BoomBox.gltf', async function ( gltf ) {
+				const loader = new GLTFLoader().setPath( 'models/gltf/' );
+				loader.load( 'HXN_Danny_Rozin_tribute_alsebu_007_3x3.glb', async function ( gltf ) {
 
 					scene.add( gltf.scene );
 
 					const shadowMesh = createSpotShadowMesh();
 					shadowMesh.position.y = - 1.1;
 					shadowMesh.position.z = - 0.25;
-					shadowMesh.scale.setScalar( 10 );
+					shadowMesh.scale.setScalar( 2 );
 					scene.add( shadowMesh );
 
 					render();
