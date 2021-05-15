@@ -68,8 +68,8 @@
 				scene.background = new THREE.Color( 0xf0f0f0 );
 				scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
-				const loader = new GLTFLoader().setPath( 'models/gltf/' );
-				loader.load( 'HXN_Danny_Rozin_tribute_alsebu_007_3x3.glb', async function ( gltf ) {
+				const loader = new GLTFLoader().setPath( 'models/gltf/RobotExpressive/' );
+				loader.load( 'RobotExpressive.glb', async function ( gltf ) {
 
 					mixer = new THREE.AnimationMixer( gltf.scene );
 					var action = mixer.clipAction( gltf.animations[ 0 ] );
