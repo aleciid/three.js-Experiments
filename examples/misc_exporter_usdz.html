@@ -70,10 +70,6 @@
 
 				const loader = new GLTFLoader().setPath( 'models/gltf/RobotExpressive/' );
 				loader.load( 'RobotExpressive.glb', async function ( gltf ) {
-
-					mixer = new THREE.AnimationMixer( gltf.scene );
-					var action = mixer.clipAction( gltf.animations[ 0 ] );
-					action.play();
 					
 					
 					scene.add( gltf.scene );
@@ -155,21 +151,6 @@
 
 			}
 			
-			//
-			
-			function animate() {
-
-				requestAnimationFrame( animate );
-
-				var delta = clock.getDelta();
-
-				if ( mixer ) mixer.update( delta );
-
-				renderer.render( scene, camera );
-
-				stats.update();
-
-			}
 
 		</script>
 
